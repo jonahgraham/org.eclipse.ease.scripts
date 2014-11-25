@@ -12,12 +12,19 @@
  ******************************************************************************/
 
 loadModule('/System/Resources');
+
+// find *.java files in workspace
 for each (file in  findFiles("*.java")) {
+
+	// for each file
 	var lineNumber = 1;
 	var fileHandle = openFile(file, READ);
-	// TODO foobar
+	
+	// read first line
 	var line = readLine(fileHandle);
 	while(line != null) {
+		
+		// search for print statement
 		if (line.search(/System.out.print/) >= 0) {
 
 			// create marker
@@ -27,6 +34,8 @@ for each (file in  findFiles("*.java")) {
 			marker.setAttribute(org.eclipse.core.resources.IMarker.MESSAGE, "TODO " + line.trim());
 			
 		}
+		
+		// read next line
 		var line = readLine(fileHandle);
 		lineNumber++;
 	}
