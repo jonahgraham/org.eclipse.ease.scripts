@@ -28,5 +28,5 @@ if (selection instanceof org.eclipse.core.resources.IFile)
 	selection = selection.getParent();
 
 if (selection instanceof org.eclipse.core.resources.IContainer)
-	runProcess("/usr/bin/krusader", [ "--left", getSystemProperty("user.home"), "--right", selection.getRawLocation() ]);
-	//        runProcess("explorer.exe", [ selection.getRawLocation() ]);
+//	runProcess("/usr/bin/krusader", [ "--left", getSystemProperty("user.home"), "--right", selection.getRawLocation() ]);
+	runProcess("explorer.exe", [ selection.getLocation().toFile().toString() ]);
