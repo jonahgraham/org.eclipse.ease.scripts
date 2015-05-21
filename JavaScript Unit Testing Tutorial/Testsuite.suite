@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite>
+<testfiles>
+<testfile>project://Tests/Simple/02 Test errors.js</testfile>
+<testfile>project://Tests/Advanced/01 Long Running Tests.js</testfile>
+<testfile>project://Tests/Simple/01 Valid tests.js</testfile>
+<testfile>project://Tests/Advanced/02 No test cases.js</testfile>
+<testfile>project://Tests/Advanced/04 Variables.js</testfile>
+<testfile>project://Tests/Advanced/03 Test Metadata.js</testfile>
+</testfiles>
+<variables>
+<variable description="Amount of test loops for Tests/Advanced/04 Variables." name="testCounter">5</variable>
+<variable description="Identifier of test hardware" name="testDevice">&quot;Magic Hardware&quot;</variable>
+</variables>
+<codeFragments>
+<codeFragment name="TestSuite Teardown">print(&quot;Test suite finished.&quot;);</codeFragment>
+<codeFragment name="TestSuite Setup">print(&quot;Test suite started...&quot;);</codeFragment>
+</codeFragments>
+<flags/>
+<description></description>
+</testsuite>
