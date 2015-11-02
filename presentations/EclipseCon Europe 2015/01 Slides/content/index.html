@@ -13,47 +13,11 @@
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic"
 	rel="stylesheet" />
+	<link href='https://fonts.googleapis.com/css?family=Marck+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-<!--
-        
-        Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
-        presentation to work.
-        
-        This style below contains styles only for demo presentation. Browse it to see how impress.js
-        classes are used to style presentation steps, or how to apply fallback styles, but I don't want
-        you to use them directly in your presentation.
-        
-        Be creative, build your own. We don't really want all impress.js presentations to look the same,
-        do we?
-        
-        When creating your own presentation get rid of this file. Start from scratch, it's fun!
-        
-    -->
-<link href="style.css" rel="stylesheet" />
-<link rel="shortcut icon" href="favicon.png" />
-<link rel="apple-touch-icon" href="apple-touch-icon.png" />
-
-<link href='https://fonts.googleapis.com/css?family=Marck+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link href="style.css" rel="stylesheet" />
 </head>
 
-<!--
-    
-    Body element is used by impress.js to set some useful class names, that will allow you to detect
-    the support and state of the presentation in CSS or other scripts.
-    
-    First very useful class name is `impress-not-supported`. This class means, that browser doesn't
-    support features required by impress.js, so you should apply some fallback styles in your CSS.
-    It's not necessary to add it manually on this element. If the script detects that browser is not
-    good enough it will add this class, but keeping it in HTML means that users without JavaScript
-    will also get fallback styles.
-    
-    When impress.js script detects that browser supports all required features, this class name will
-    be removed.
-    
-    The class name on body element also depends on currently active presentation step. More details about
-    it can be found later, when `hint` element is being described.
-    
--->
 <body class="impress-not-supported">
 
 	<!--
@@ -168,6 +132,7 @@
 		<div id="load_modules" class="step slide" data-x="3000" data-y="0" data-rotate="90">
 			<h1>... loaded dynamically during runtime</h1>
 			<img class="center" src="images/scrn_load_module.png" />
+			<img id="popup" src="images/scrn_script_popup.png" />
 		</div>
 
 		<div id="wrap_java_instance" class="step slide" data-x="4000" data-y="-1250" data-rotate="90">
@@ -250,11 +215,13 @@
 		</div>
 
 		<div id="charts" class="step slide background" data-x="-1500" data-y="1200" data-rotate="225" >
-			<p>Live charts</p>
-			<img src="images/code_charts.png" /> <img src="images/scrn_simple_chart.png" /> <img
-				src="images/scrn_advanced_chart.png" /> <a
-				href="http://codeandme.blogspot.co.at/2015/04/live-charting-with-ease.html">Read the
-				detailed tutorial</a>
+			<h1>Live charts</h1>
+			<div class="code">
+				<img src="images/code_charts.png" />
+			</div>
+			<img id="charts1" src="images/scrn_simple_chart.png" />
+			<img id="charts2" src="images/scrn_advanced_chart.png" />
+			<a class="bottomright" href="http://codeandme.blogspot.co.at/2015/04/live-charting-with-ease.html">Read the detailed tutorial</a>
 		</div>
 
 		<div id="unit_tests" class="step slide background" data-x="-2000" data-y="0" data-rotate="270" >
@@ -374,30 +341,6 @@
 
 	</div>
 
-	<!--
-    
-    Hint is not related to impress.js in any way.
-    
-    But it can show you how to use impress.js features in creative way.
-    
-    When the presentation step is shown (selected) its element gets the class of "active" and the body element
-    gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
-    so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
-    the id of `bored`) is active, body element gets a class of `impress-on-bored`.
-    
-    This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
-    the first step of presentation is visible for a couple of seconds.
-    
-    ...
-    
-    And when it comes to this piece of JavaScript below ... kids, don't do this at home ;)
-    It's just a quick and dirty workaround to get different hint text for touch devices.
-    In a real world it should be at least placed in separate JS file ... and the touch content should be
-    probably just hidden somewhere in HTML - not hard-coded in the script.
-    
-    Just sayin' ;)
-    
--->
 	<div class="hint">
 		<p>Use a spacebar or arrow keys to navigate</p>
 	</div>

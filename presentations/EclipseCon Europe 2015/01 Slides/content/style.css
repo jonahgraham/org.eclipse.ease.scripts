@@ -139,7 +139,7 @@ a:hover, a:focus {
 }
 
 .step.active {
-	background: rgb(232, 232, 202);
+	background: #ffffc7;
 	transition: background-color 1s ease-in;
 	
 	border: 1px solid rgba(82, 82, 52, .3);
@@ -148,7 +148,7 @@ a:hover, a:focus {
 }
 
 .background {
-	background: rgb(232, 232, 202);
+	background: #ffffc7;
 }
 
 /*
@@ -472,7 +472,7 @@ td {
 }
 
 tr:nth-child(even) {
-	background: rgb(212, 212, 162);
+	background: #d8d89e;
 }
 
 img {
@@ -551,6 +551,16 @@ ul {
 
 
 /*
+	Slide: 'Modules loaded dynamically'
+*/
+
+#popup {
+	position: absolute;
+	top: 450px;
+	right: 40px;
+}
+
+/*
 	Slide: 'I love scripting'
 */
 #title #i_love {
@@ -586,6 +596,23 @@ ul {
 	position: absolute;
 	top: 400px;
 	left: 600px;
+}
+
+/*
+	Slide: 'Invoke java'
+*/
+#charts1 {
+	position: absolute;
+	top: 145px;
+	left: 540px;
+	height: 200px;
+}
+
+#charts2 {
+	position: absolute;
+	top: 365px;
+	left: 540px;
+	height: 200px;
 }
 
 /*
@@ -758,12 +785,6 @@ ul {
 	width: 50px;
 
   transition: all 5s ease-in;
-}
-
-
-
-.blue {
-	color: blue;
 }
 
 .box {
