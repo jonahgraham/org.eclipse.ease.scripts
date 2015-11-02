@@ -35,21 +35,13 @@
 	</div>
 
 	<div id="impress">
-		<div id="title" class="step slide" data-x="10000" data-y="22000" data-scale="40">
+		<div id="title" class="step slide" data-x="0" data-y="600" data-scale="4">
 			<div id="i_love">I love scripting</div>
-			<div id="copyright" class="bottomright">EclipseCon Europe 2015<br />by Christian Pontesegger</div>
+			<div id="copyright">EclipseCon Europe 2015<br />by Christian Pontesegger</div>
 		</div>
 
-		<div id="ide-support" class="step slide" data-x="-55" data-y="45" data-scale="0.52">
-		</div>
-
-		<div id="engines" class="step slide" data-x="60" data-y="45" data-scale="0.52">
-		</div>
-
-		<div id="bigPicture" class="step slide" data-x="0" data-y="0" >
-			<p id="picture_java" class="box eclipse">
-				<img src="images/java.png" />
-			</p>
+		<div id="bigPicture" class="step slide" data-x="0" data-y="500" data-z="-500" data-rotate-x="-90">
+			<img id="picture_java" src="images/java.png" />
 
 			<img id="picture_script1" src="images/script.png" />
 			<img id="picture_script2" src="images/script.png" />
@@ -76,12 +68,12 @@
 			<p id="picture_jruby" class="engine box eclipse">JRuby</p>
 		</div>
 
-		<div id="shell_main" class="step slide background" data-x="0" data-y="-1500">
+		<div id="shell_main" class="step slide background" data-x="0" data-y="-1700">
 			<h1>An interactive script shell</h1>
 			<img class="center" src="images/scrn_shell.png" />
 		</div>
 
-		<div id="shell_jre" class="step slide" data-x="0" data-y="-2500">
+		<div id="shell_jre" class="step slide background" data-x="0" data-y="-2700">
 			<h1>... with access to the Java runtime</h1>
 			<div id="jre1" class="code">
 				<img src="images/shell_java_1.png" />
@@ -94,12 +86,12 @@
 			</div>
 		</div>
 
-		<div id="shell_jars" class="step slide" data-x="-700" data-y="-3500">
+		<div id="shell_jars" class="step slide background" data-x="-700" data-y="-3700">
 			<h1>... your JARs</h1>
 			<img class="center" src="images/scrn_shell_jars.png" />
 		</div>
 
-		<div id="shell_eclipse" class="step slide" data-x="700" data-y="-3500">
+		<div id="shell_eclipse" class="step slide background" data-x="700" data-y="-3700">
 			<h1>... and Eclipse</h1>
 			<img class="center" src="images/scrn_shell_eclipse.png" />
 			<p class="bottomright">with all its plug-ins</p>
@@ -110,7 +102,7 @@
 			<img class="center" src="images/scrn_code_completion.png" />
 		</div>
 
-		<div id="code_completion_help" class="step slide" data-x="2200" data-y="-1900" data-rotate="45">
+		<div id="code_completion_help" class="step slide background" data-x="2200" data-y="-1900" data-rotate="45">
 			<h1>... with help tooltips</h1>
 			<img class="center" src="images/scrn_code_completion_help.png" width="880" />
 			<img id="coming_soon" src="images/coming_soon.png" width="300" />
@@ -129,24 +121,24 @@
 			<img class="right" src="images/scrn_modules_explorer.png" />
 		</div>
 
-		<div id="load_modules" class="step slide" data-x="3000" data-y="0" data-rotate="90">
+		<div id="load_modules" class="step slide background" data-x="3000" data-y="0" data-rotate="90">
 			<h1>... loaded dynamically during runtime</h1>
 			<img class="center" src="images/scrn_load_module.png" />
 			<img id="popup" src="images/scrn_script_popup.png" />
 		</div>
 
-		<div id="wrap_java_instance" class="step slide" data-x="4000" data-y="-1250" data-rotate="90">
+		<div id="wrap_java_instance" class="step slide background" data-x="4000" data-y="-1250" data-rotate="90">
 			<h1>Wrap any java object</h1>
 			<img class="center" src="images/scrn_wrap_instance.png" />
 		</div>
 
-		<div id="register_pojo" class="step slide" data-x="4000" data-y="0" data-rotate="90">
+		<div id="register_pojo" class="step slide background" data-x="4000" data-y="0" data-rotate="90">
 			<h1>Register POJOs</h1>
 			<img id="pojo1" src="images/code_simple_module.png" />
 			<img id="pojo2" src="images/code_module_extension.png" />
 		</div>
 
-		<div id="write_modules" class="step slide" data-x="4000" data-y="1250" data-rotate="90">
+		<div id="write_modules" class="step slide background" data-x="4000" data-y="1250" data-rotate="90">
 			<h1>or write sophisticated modules</h1>
 			<ul class="center">
 				<li>select methods/fields to export</li>
@@ -154,16 +146,16 @@
 				<li>provide method aliases</li>
 				<li>deprecate methods</li>
 			</ul>
-			<a class="centerbottom" href="http://codeandme.blogspot.co.at/2014/10/writing-modules-for-ease.html">Read the
+			<a target="_blank"  class="centerbottom" href="http://codeandme.blogspot.co.at/2014/10/writing-modules-for-ease.html">Read the
 				detailed tutorial</a>
 		</div>
 
-		<div id="module_docs" class="step slide" data-x="5000" data-y="-625" data-rotate="90">
+		<div id="module_docs" class="step slide background" data-x="5000" data-y="-625" data-rotate="90">
 			<h1>Consistent documentation</h1>
 			<img class="center" src="images/scrn_online_help.png" />
 		</div>
 
-		<div id="module_docs_build" class="step slide" data-x="5000" data-y="625" data-rotate="90">
+		<div id="module_docs_build" class="step slide background" data-x="5000" data-y="625" data-rotate="90">
 			<h1>created @ build time</h1>
 			<img class="center code" src="images/code_build_module_docs.png" />
 		</div>
@@ -173,12 +165,12 @@
 			<img class="center" src="images/scrn_launch_configuration.png" />
 		</div>
 
-		<div id="debug_config" class="step slide" data-x="2200" data-y="1900" data-rotate="135">
+		<div id="debug_config" class="step slide background" data-x="2200" data-y="1900" data-rotate="135">
 			<h1>Integrated debugger</h1>
 			<img class="center" src="images/scrn_debugging.png" />
 		</div>
 
-		<div id="script_libraries" class="step slide background" data-x="0" data-y="1500" data-rotate="180">
+		<div id="script_libraries" class="step slide background" data-x="0" data-y="1700" data-rotate="180">
 			<h1>Create script libraries</h1>
 			<img class="left" src="images/scrn_script_explorer.png" />
 			<ul class="right">
@@ -190,13 +182,13 @@
 			</ul>
 		</div>
 
-		<div id="script_repositories" class="step slide" data-x="0" data-y="2500" data-rotate="180">
+		<div id="script_repositories" class="step slide background" data-x="0" data-y="2700" data-rotate="180">
 			<h1>Share with colleagues</h1>
 			<img class="center" src="images/scrn_script_locations.png" />
 			<p class="bottomright">... or the world</p>
 		</div>
 
-		<div id="script_ui_integration" class="step slide" data-x="0" data-y="3500" data-rotate="180">
+		<div id="script_ui_integration" class="step slide background" data-x="0" data-y="3700" data-rotate="180">
 			<h1>Enhance your UI</h1>
 			<div id="toolbar">
 				<img src="images/scrn_script_ui_toolbar.png" />
@@ -210,7 +202,7 @@
 				<img src="images/scrn_script_ui_context.png" />
 				<p>... context menus</p>
 			</div>
-			<a class="bottomright" href="http://codeandme.blogspot.co.at/2014/12/ease-scripts-conquer-ui.html">Read the
+			<a target="_blank"  class="bottomright" href="http://codeandme.blogspot.co.at/2014/12/ease-scripts-conquer-ui.html">Read the
 				detailed tutorial</a>
 		</div>
 
@@ -221,7 +213,7 @@
 			</div>
 			<img id="charts1" src="images/scrn_simple_chart.png" />
 			<img id="charts2" src="images/scrn_advanced_chart.png" />
-			<a class="bottomright" href="http://codeandme.blogspot.co.at/2015/04/live-charting-with-ease.html">Read the detailed tutorial</a>
+			<a target="_blank"  class="bottomright" href="http://codeandme.blogspot.co.at/2015/04/live-charting-with-ease.html">Read the detailed tutorial</a>
 		</div>
 
 		<div id="unit_tests" class="step slide background" data-x="-2000" data-y="0" data-rotate="270" >
@@ -233,7 +225,7 @@
 				<li>Reporting</li>
 				<li>integrates with Hudson/Jenkins</li>
 			</ul>
-			<a class="bottomright" href="http://codeandme.blogspot.co.at/2015/05/unit-testing-with-scripts-in-ease.html">Read
+			<a target="_blank"  class="bottomright" href="http://codeandme.blogspot.co.at/2015/05/unit-testing-with-scripts-in-ease.html">Read
 				the detailed tutorial</a>
 		</div>
 
@@ -242,19 +234,19 @@
 			<img class="center" src="images/code_invoke_java.png" />
 		</div>
 
-		<div id="java_load" class="step slide" data-x="-2200" data-y="-1900" data-rotate="315">
+		<div id="java_load" class="step slide background" data-x="-2200" data-y="-1900" data-rotate="315">
 			<h1>... load classes from workspace</h1>
 			<img class="center" src="images/scrn_compile_class.png" />
 		</div>
 
-		<div id="java_invoke" class="step slide" data-x="-2900" data-y="-2600" data-rotate="315">
+		<div id="java_invoke" class="step slide background" data-x="-2900" data-y="-2600" data-rotate="315">
 			<h1>INVOKE !</h1>
 			<img class="center" src="images/scrn_invoke_java.png" />
 			<img id="java_result" src="images/scrn_invoke_result.png" />
 			<p class="bottomright">... and we do not launch a new JRE.</p>
 		</div>
 
-		<div id="engine_integration" class="step slide" data-x="-3000" data-y="-4000" >
+		<div id="engine_integration" class="step slide background" data-x="0" data-y="-5000" data-rotate="360">
 			<h1>Supported engines</h1>
 			<table class="center">
 				<tr>
@@ -323,19 +315,17 @@
 			</table>
 		</div>
 
-
-
-		<div id="conclusion" class="step slide" data-x="10000" data-y="8000" data-scale="40">
+		<div id="conclusion" class="step slide" data-x="0" data-y="100" data-scale="3" data-rotate-x="-20">
 			<div>That's why</div>
 		</div>
 
-		<div id="get_in_touch" class="step slide" data-x="80000" data-y="8000" data-scale="40">
+		<div id="get_in_touch" class="step slide background" data-x="0" data-y="-500" data-z="500" data-rotate-x="-90">
 			<h1>Get in touch</h1>
-			<p id="link1" class="center"><a href="https://eclipse.org/ease">eclipse.org/ease</a></p>
-			<p id="link2" class="center"><a href="https://codeandme.blogspot.com">codeandme.blogspot.com</a></p>
+			<p id="link1" class="center"><a target="_blank" href="https://eclipse.org/ease">eclipse.org/ease</a></p>
+			<p id="link2" class="center"><a target="_blank" href="https://codeandme.blogspot.com">codeandme.blogspot.com</a></p>
 		</div>
 
-		<div id="evaluation" class="step slide" data-x="170000" data-y="8000" data-scale="40">
+		<div id="evaluation" class="step slide" data-x="0" data-y="-500" data-z="1500" data-rotate-x="-90">
 			<img class="center" src="images/evaluation.png" />
 		</div>
 

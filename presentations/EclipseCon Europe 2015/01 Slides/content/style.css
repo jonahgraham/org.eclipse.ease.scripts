@@ -34,15 +34,6 @@ ol, ul {
 	list-style: none;
 }
 
-blockquote, q {
-	quotes: none;
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-	content: '';
-	content: none;
-}
-
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -74,9 +65,8 @@ body {
 */
 a {
 	color: blue;
-	text-decoration: underline;
-	padding: 0 0.1em;
-	text-shadow: -1px -1px 2px rgba(100, 100, 100, 0.9);
+	text-decoration: none;
+	padding: 5px 10px 5px 10px;
 	border-radius: 0.2em;
 	-webkit-transition: 0.5s;
 	-moz-transition: 0.5s;
@@ -86,9 +76,135 @@ a {
 }
 
 a:hover, a:focus {
-	background: rgba(255, 255, 255, 1);
+	background: #ffffef;
 	text-shadow: -1px -1px 2px rgba(100, 100, 100, 0.5);
+	box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
 }
+
+/*
+	slide headers
+*/
+h1 {
+	font-size: 1.5em;
+	text-align: center;
+	color: #444466;
+	
+	padding-top: 50px;
+}
+
+/*
+	tables
+*/
+table {
+	font-size: 0.6em;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #ccc;
+    text-align: center;
+    vertical-align: bottom;
+	padding: 5px 20px 5px 20px;
+}
+
+tr:nth-child(even) {
+	background: #d8d89e;
+}
+
+/*
+	rotated table headers
+*/
+th.rotate {
+  /* Something you can count on */
+  height: 70px;
+  white-space: nowrap;
+}
+
+th.rotate > div {
+  transform: 
+    /* Magic Numbers */
+    translate(10px, 20px)
+    /* 45 is really 360 - 45 */
+    rotate(300deg);
+  width: 50px;
+}
+
+th.rotate > div > span {
+  padding: 5px 10px;
+}
+
+/*
+	general stuff
+*/
+img {
+	max-height: 450px;
+}
+
+li {
+	margin-top: 10px;
+}
+
+ul {
+    list-style-image: url('images/bullet.png');
+}
+
+/*
+	Source code styling
+*/
+div.code {
+	background-image: url("images/script.png");
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	background-position: 10px 10px;
+	padding-left: 60px;
+}
+
+.code {
+	background: white;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px 10px 5px 10px;
+}
+
+/*
+	Locations on a slide
+*/
+.left {
+	position: absolute;
+	left: 80px;
+
+	top: 55%;
+  	transform: translate(0%, -50%);
+}
+
+.right {
+	position: absolute;
+	right: 80px;
+	
+	top: 55%;
+  	transform: translate(0%, -50%);
+}
+
+.bottomright {
+	position: absolute;
+	right: 80px;
+	bottom: 50px;	
+}
+
+.center {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centerbottom {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
 
 /*
     All of the content will be still fully accessible for them, but I want
@@ -147,41 +263,6 @@ a:hover, a:focus {
 	box-shadow: 0 10px 30px rgba(0, 0, 0, .6);
 }
 
-.background {
-	background: #ffffc7;
-}
-
-/*
-    ... and we enhance the styles for impress.js.
-
-    Basically we remove the margin and make inactive steps a little bit transparent.
-*/
-.impress-enabled .step {
-	margin: 0;
-}
-
-.impress-enabled .step * {
-	opacity: 0.4;	
-	-webkit-transition: opacity 1s;
-	-moz-transition: opacity 1s;
-	-ms-transition: opacity 1s;
-	-o-transition: opacity 1s;
-	transition: opacity 1s;
-}
-
-.impress-enabled .step.active * {
-	opacity: 1;
-	-webkit-transition: opacity 1s;
-	-moz-transition: opacity 1s;
-	-ms-transition: opacity 1s;
-	-o-transition: opacity 1s;
-	transition: opacity 1s;
-}
-
-/*
-    These 'slide' step styles were heavily inspired by HTML5 Slides:
-    http://html5slides.googlecode.com/svn/trunk/styles.css
-*/
 .slide {
 	display: block;
 	width: 900px;
@@ -196,65 +277,48 @@ a:hover, a:focus {
 	letter-spacing: -1px;
 }
 
-/*
-    The last step is an overview.
-    There is no content in it, so we make sure it's not visible because we want
-    to be able to click on other steps.
-
-*/
-#overview {
-	display: none
+.background {
+	background: #ffffc7;
 }
 
 /*
-    We also make other steps visible and give them a pointer cursor using the
-    `impress-on-` class.
+    ... and we enhance the styles for impress.js.
 */
-.impress-on-overview .step {
+.impress-enabled .step  {
+	opacity: 0;	
+	-webkit-transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-ms-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	transition: opacity 1s;
+
+	margin: 0;
+}
+
+.impress-enabled .step.active  {
 	opacity: 1;
-	cursor: pointer;
+	-webkit-transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-ms-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	transition: opacity 1s;
 }
 
+.impress-enabled .step.past  {
+	opacity: 0.6;
+}
+
+#title {
+	opacity: 1;
+}
+
+#bigPicture.step.past {
+	opacity: 0;
+}
+	
 /*
     Now, when we have all the steps styled let's give users a hint how to navigate
     around the presentation.
-
-    The best way to do this would be to use JavaScript, show a delayed hint for a
-    first time users, then hide it and store a status in cookie or localStorage...
-
-    But I wanted to have some CSS fun and avoid additional scripting...
-
-    Let me explain it first, so maybe the transition magic will be more readable
-    when you read the code.
-
-    First of all I wanted the hint to appear only when user is idle for a while.
-    You can't detect the 'idle' state in CSS, but I delayed a appearing of the
-    hint by 5s using transition-delay.
-
-    You also can't detect in CSS if the user is a first-time visitor, so I had to
-    make an assumption that I'll only show the hint on the first step. And when
-    the step is changed hide the hint, because I can assume that user already
-    knows how to navigate.
-
-    To summarize it - hint is shown when the user is on the first step for longer
-    than 5 seconds.
-
-    The other problem I had was caused by the fact that I wanted the hint to fade
-    in and out. It can be easily achieved by transitioning the opacity property.
-    But that also meant that the hint was always on the screen, even if totally
-    transparent. It covered part of the screen and you couldn't correctly clicked
-    through it.
-    Unfortunately you cannot transition between display `block` and `none` in pure
-    CSS, so I needed a way to not only fade out the hint but also move it out of
-    the screen.
-
-    I solved this problem by positioning the hint below the bottom of the screen
-    with CSS transform and moving it up to show it. But I also didn't want this move
-    to be visible. I wanted the hint only to fade in and out visually, so I delayed
-    the fade in transition, so it starts when the hint is already in its correct
-    position on the screen.
-
-    I know, it sounds complicated ... maybe it would be easier with the code?
 */
 .hint {
 	/*
@@ -312,17 +376,7 @@ a:hover, a:focus {
 }
 
 /*
-    There is one funny thing I just realized.
-
-    Thanks to this workaround above everything except #impress element is invisible
-    for click events. That means that the hint element is also not clickable.
-    So basically all of this transforms and delayed transitions trickery was probably
-    not needed at all...
-
-    But it was fun to learn about it, wasn't it?
-*/
-
-/*
+	================================================================================
     And now we start to style each step separately.
 
     I agree that this may be not the most efficient, object-oriented and
@@ -334,154 +388,52 @@ a:hover, a:focus {
 */
 
 /*
-	Slide: IDE Support (ide-support)
-
-	Display Eclipse & supported scripting IDEs
+	Slides without borders & background
 */
+.impress-on-title .step.active {
+	background: none;
+	
+	border-width: 0px;
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+}
 
-.impress-on-ide-support .step #picture_eclipse,
-.impress-on-ide-support .step #picture_eclipse *,
-.impress-on-ide-support .step .ideSupport
-{
-	opacity: 1;
+.impress-on-conclusion .step.active {
+	background: none;
+	
+	border-width: 0px;
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+}
+
+.impress-on-evaluation .step.active {
+	background: none;
+	
+	border-width: 0px;
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
 }
 
 /*
-	Slide: Engine Support (engines)
-
-	Display Eclipse & supported script engines
+	Slide: 'I love scripting'
 */
-
-.impress-on-engines .step #picture_eclipse,
-.impress-on-engines .step #picture_eclipse *,
-.impress-on-engines .step .engine
-{
-	opacity: 1;
-}
-
-.impress-on-conclusion .step #title,
-.impress-on-conclusion .step #title *
-{
-	opacity: 1;
-}
-
-
-.top {
-	position: absolute;
-	top: 20px;
-}
-.bottom {
-	position: absolute;
-	bottom: 20px;
-}
-.left {
-	position: absolute;
-	left: 80px;
-
-	top: 55%;
-  	transform: translate(0%, -50%);
-}
-.right {
-	position: absolute;
-	right: 80px;
-	
-	top: 55%;
-  	transform: translate(0%, -50%);
-}
-
-.bottomright {
-	position: absolute;
-	right: 80px;
-	bottom: 50px;	
-}
-
-h1 {
-	font-size: 1.5em;
+#title #i_love {
+	font-family: 'Marck Script', cursive;
+	font-size: 2.5em;
 	text-align: center;
 	color: #444466;
 	
-	padding-top: 50px;
+	padding-top: 200px;
+}
+
+#title #copyright {
+	font-size: 0.8em;
+	
+	position: fixed;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, 0%);
 }
 
 
-div.code {
-	background-image: url("images/script.png");
-	background-repeat: no-repeat;
-	background-size: 32px 32px;
-	background-position: 10px 10px;
-	padding-left: 60px;
-}
 
-.code {
-	background: white;
-	border: 1px solid black;
-	border-radius: 5px;
-	padding: 5px 10px 5px 10px;
-}
-
-li {
-	margin-top: 10px;
-}
-
-.center {
-  position: fixed;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.centerbottom {
-  position: fixed;
-  bottom: 50px;
-  left: 50%;
-  transform: translate(-50%, 0%);
-}
-
-th.rotate {
-  /* Something you can count on */
-  height: 70px;
-  white-space: nowrap;
-}
-
-th.rotate > div {
-  transform: 
-    /* Magic Numbers */
-    translate(10px, 20px)
-    /* 45 is really 360 - 45 */
-    rotate(300deg);
-  width: 50px;
-}
-
-th.rotate > div > span {
-  padding: 5px 10px;
-}
-
-table {
-	font-size: 0.6em;
-    border-collapse: collapse;
-}
-
-td {
-    border: 1px solid #ccc;
-    text-align: center;
-    vertical-align: bottom;
-}
-
-td {
-	padding: 5px 20px 5px 20px;
-}
-
-tr:nth-child(even) {
-	background: #d8d89e;
-}
-
-img {
-	max-height: 450px;
-}
-
-ul {
-    list-style-image: url('images/bullet.png');
-}
 /*
 	Slide: 'Shell JRE access'
 */
@@ -560,21 +512,6 @@ ul {
 	right: 40px;
 }
 
-/*
-	Slide: 'I love scripting'
-*/
-#title #i_love {
-	font-family: 'Marck Script', cursive;
-	font-size: 2.5em;
-	text-align: center;
-	color: #444466;
-	
-	padding-top: 200px;
-}
-
-#title #copyright {
-	font-size: 0.8em;
-}
 
 /*
 	Slide: 'Conclusion'
@@ -715,23 +652,13 @@ ul {
 }
 
 #picture_java {
-	left: 20px;
-	top: 20px;
-
-	width: 860px;
-	height: 660px;
-
-	border: 1px solid #8C6C9C;
-	background: linear-gradient(to bottom, #FFFFEE, #FFFFCC);
-	color: #330066;
-	font-size: 20px;
-}
-
-#picture_java img {
 	width: 15%;
 	height: 15%;
 
-	margin-top: 550px;
+	position: absolute;
+	top: 575px;
+  	left: 50%;
+  	transform: translate(-50%, 0%);	
 }
 
 #picture_ease {
@@ -800,5 +727,6 @@ ul {
 	color: #330066;
 	font-size: 20px;
 }
+
 
     
