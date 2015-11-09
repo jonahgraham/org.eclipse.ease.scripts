@@ -19,8 +19,8 @@ file = new java.io.File("/root");
 setSharedObject("file", file);
 
 // spawn 2 engines
-engineA = fork("Thread A.js");
-engineB = fork("Thread B.js", "pass, some, delimited, script arguments");
+engineA = fork("01 Thread A.js");
+engineB = fork("01 Thread B.js", "pass, some, delimited, script arguments");
 
 // wait for engines to be terminated
 join(engineA);
